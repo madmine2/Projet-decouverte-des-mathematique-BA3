@@ -1,0 +1,79 @@
+// global variable
+var width_page = document.documentElement.clientWidth;
+var height_page = document.documentElement.clientHeight;
+var heighRatio = 0.9
+var widthRatio = 0.9
+var width = widthRatio*width_page;
+var height = heighRatio*height_page;
+var textColor = "black"
+var textSize
+function setup(){
+     //canvas attributes
+ var canv = document.createElement("canvas");
+ canv.setAttribute("id","canvas_exemple1");
+ var div = document.getElementById("div_canvas_exemple1");
+ div.appendChild(canv);
+ canv.style.position = "relative"
+
+ //set up the context
+ctx = canv.getContext("2d");
+canvRect = canv.getBoundingClientRect();
+    update_size()
+}
+
+//
+function update_size(){
+    var canv = document.getElementById("canvas_exemple1")
+    var div_canv = document.getElementById("div_canvas_exemple1")
+    div_canv.style.left = (1-widthRatio)/2*width_page+"px"
+    div_canv.style.top = (1-widthRatio)/2*height_page+"px"
+    canv.height =  height;
+    canv.width = width;
+    textSize = height/30 
+    ctx.fillStyle = "black";
+    ctx.lineWidth  = 10;
+  ctx.strokeRect(0,0,width,height);
+}
+
+// fonction qui réagit aux changement de size de l'écran et qui adapte le canvas
+window.addEventListener("resize",function(event){
+    if (width != document.documentElement.clientWidth || height != document.documentElement.clientHeight){
+        width_page = document.documentElement.clientWidth;
+        height_page = document.documentElement.clientHeight;
+        width = widthRatio*width_page;
+        height = heighRatio*height_page;
+        update_size();
+        main()
+    }
+})
+// !!!!!! à supprimer !!!!!!!!!
+// outil de développement, à chaque clique donne les coordonées du curseur relatif au canvas 
+window.addEventListener("click", function(ev){
+    var canv = document.getElementById("div_canvas_exemple1");
+    var offsetX = canv.offsetLeft
+    var offsetY = canv.offsetTop;
+    var x = parseInt(ev.pageX - offsetX);
+    var y = parseInt(ev.pageY - offsetY);
+    console.log("x : "+x/(width)*100+" %")
+    console.log("y : "+y/(height)*100+" %")
+})
+
+function writeSomething(text, x , y, textSize){
+    ctx.fillStyle = textColor;
+    ctx.font = textSize + "px dejavu sans mono";
+    ctx.fillText(text, x, y);
+}
+
+function main(){
+    writeSomething('Bonjour ',0.38483796296296297*width,0.5210489993098688*height,1*textSize); writeSomething('Ici dskmqfl',0.3081597222222222*width,0.3467908902691511*height,1*textSize); 
+    // var phrases1 = ["Voici un petit problème : ","Si j'ai acheté 3 pommes pour 6 euros, combien coûte "," une seule pomme ?","Pour résoudre ce problème, on cherche le prix d'une seule pomme ",
+    //                 "Tel que lorsqu'on fait 3 fois ce prix, on obtient 6 euros","En mathématiques :  3 * ''prix d'une seule pomme'' = 6 ", "Mais ce n'est pas très pratique de devoir écrire prix d'une seule ","pomme à chaque fois. "]
+    // var phrases1_pos = [0.16,0.2,0.24,0.3,0.34,0.38,0.42,0.46]
+    // for (var i = 0; i < phrases1.length ; i ++){
+    // writeSomething(phrases1[i],0.08*width,phrases1_pos[i]*height,textSize)
+    //}
+    //writeSomething("2 * 3 = 6", 0.05*width,0.1*height)
+}
+//main
+setup()
+main()
