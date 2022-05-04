@@ -22,39 +22,42 @@
                     <div class="question bg-white p-3 border-bottom">
                         <div class="d-flex flex-row justify-content-between align-items-center mcq">
                             <h4>Quiz sur les exposants</h4>
-                            <span>(1 sur 5)</span>
+                            <span id="span">(1 sur 5)</span>
                         </div>
                     </div>
                     <div class="question bg-white p-3 border-bottom">
                         <div class="d-flex flex-row align-items-center question-title">
-                            <h5 class="text-danger">Q.1 Un calcul simple</h5>
+                            <h5 class="text-danger" id="question">Q.1 Un calcul simple</h5>
                         </div>
                         <h5 class="mt-1 ml-2">=> 3^3 = ?</h5>
                         <div class="ans ml-2">
-                            <label class="radio"> <input type="radio" name="first" value=9> <span>9</span>
+                            <label class="radio"> <input type="radio" name="first" value=9>
+                                <span id="radio0">9</span>
                             </label>
                         </div>
                         <div class="ans ml-2">
                             <label class="radio"> <input id="response" type="radio" name="second" value=27>
-                                <span>27</span>
+                                <span id="radio1">27</span>
                             </label>
                         </div>
                         <div class="ans ml-2">
-                            <label class="radio"> <input type="radio" name="third" value=6> <span>6</span>
+                            <label class="radio"> <input type="radio" name="third" value=6>
+                                <span id="radio2">6</span>
                             </label>
                         </div>
                         <div class="ans ml-2">
-                            <label class="radio"> <input type="radio" name="fourth" value=1> <span>1</span>
+                            <label class="radio"> <input type="radio" name="fourth" value=1>
+                                <span id="radio3">1</span>
                             </label>
                         </div>
                     </div>
                     <div class="d-flex flex-row justify-content-between align-items-center p-3 bg-white">
                         <button class="btn btn-primary d-flex align-items-center btn-danger" type="button">
-                            <i class="fa fa-angle-left mt-1 mr-1"></i>&nbsp;previous
+                            <i class="fa fa-angle-left mt-1 mr-1"></i>&nbsp;Précédant
                         </button>
                         <button class="btn btn-primary border-success align-items-center btn-success" id="nextButton"
                             onclick="next()" value="1" type="button">
-                            Next<i class="fa fa-angle-right ml-2"></i>
+                            Suivant<i class="fa fa-angle-right ml-2"></i>
                         </button>
                     </div>
                 </div>
@@ -63,15 +66,34 @@
     </div>
 
     <script>
-        function next() {
-            var value = document.getElementById("nextButton").value;
-            value = parseInt(value) + 1;
-            document.getElementById("nextButton").value = value;
-            document.getElementById("span1").textContent = "(" + value + " of 5)";
-            document.getElementById("span2").textContent = "58";
-
-
+        var reponse = [["9","27","6","1"],["5","-5","1/5","autre"],["9","27","6","1"]]
+        var question = ["=> 3^3 = ?", "=> 2^2 * 2^3 = ?","cqfd?"]
+      function next() {
+        var value = document.getElementById("nextButton").value;
+        value++;
+        for (var i = 0 ; i < 4; i++){
+           
+            document.getElementById("radio"+i).textContent = reponse[value-1][i];
+           
         }
+        document.getElementById("span").textContent = "(" + value + " sur 5)";
+        document.getElementById("question").textContent = question[value-1];
+        document.getElementById("nextButton").value = value;
+  
+       
+      }
+      function previous(){
+        var value = document.getElementById("nextButton").value;
+        value--;
+        for (var i = 0 ; i < 4; i++){
+            document.getElementById("radio"+i).textContent = reponse[value-1][i];
+        }
+        document.getElementById("span").textContent = "(" + value + " sur 5)";
+        document.getElementById("question").textContent = question[value-1];
+        document.getElementById("nextButton").value = value;
+  
+       
+      }
     </script>
 </body>
 

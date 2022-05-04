@@ -25,11 +25,9 @@
         <div class="col-md-10 col-lg-10">
           <div class="border">
             <div class="question bg-white p-3 border-bottom">
-              <div
-                class="d-flex flex-row justify-content-between align-items-center mcq"
-              >
+              <div class="d-flex flex-row justify-content-between align-items-center mcq">
                 <h4>L'inverse</h4>
-                <span id="span1">(1 of 5)</span>
+                <span id="span1">(1 sur 5)</span>
               </div>
             </div>
             <div class="question bg-white p-3 border-bottom">
@@ -62,24 +60,20 @@
                 </label>
               </div>
             </div>
-            <div
-              class="d-flex flex-row justify-content-between align-items-center p-3 bg-white"
-            >
+            <div class="d-flex flex-row justify-content-between align-items-center p-3 bg-white">
               <button
                 class="btn btn-primary d-flex align-items-center btn-danger"
                 type="button"
-                onclick="previous()"
-              >
-                <i class="fa fa-angle-left mt-1 mr-1"></i>&nbsp;previous
+                onclick="previous()">
+                <i class="fa fa-angle-left mt-1 mr-1"></i>&nbsp;Précédant
               </button>
               <button
                 class="btn btn-primary border-success align-items-center btn-success"
                 id="nextButton"
                 onclick="next()"
                 value="1"
-                type="button"
-              >
-                Next<i class="fa fa-angle-right ml-2"></i>
+                type="button">
+                Suivant<i class="fa fa-angle-right ml-2"></i>
               </button>
             </div>
           </div>
@@ -99,7 +93,7 @@
             document.getElementById("radio"+i).textContent = reponse[value-1][i];
            
         }
-        document.getElementById("span1").textContent = "(" + value + " of 5)";
+        document.getElementById("span1").textContent = "(" + value + " sur 5)";
         document.getElementById("questionSpan").textContent = question[value-1];
         document.getElementById("nextButton").value = value;
   
@@ -114,7 +108,7 @@
             document.getElementById("radio"+i).textContent = reponse[value-1][i];
            
         }
-        document.getElementById("span1").textContent = "(" + value + " of 5)";
+        document.getElementById("span1").textContent = "(" + value + " sur 5)";
         document.getElementById("questionSpan").textContent = question[value-1];
         document.getElementById("nextButton").value = value;
   
