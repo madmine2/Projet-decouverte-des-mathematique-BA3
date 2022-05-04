@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./testQuizz.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+
+</head>
+
+<body>
+
+    <div class="container mt-5">
+        <div class="d-flex justify-content-center row">
+            <div class="col-md-10 col-lg-10">
+                <div class="border">
+                    <div class="question bg-white p-3 border-bottom">
+                        <div class="d-flex flex-row justify-content-between align-items-center mcq">
+                            <h4>Quiz sur les exposants</h4>
+                            <span>(1 sur 5)</span>
+                        </div>
+                    </div>
+                    <div class="question bg-white p-3 border-bottom">
+                        <div class="d-flex flex-row align-items-center question-title">
+                            <h5 class="text-danger">Q.1 Un calcul simple</h5>
+                        </div>
+                        <h5 class="mt-1 ml-2">=> 3^3 = ?</h5>
+                        <div class="ans ml-2">
+                            <label class="radio"> <input type="radio" name="first" value=9> <span>9</span>
+                            </label>
+                        </div>
+                        <div class="ans ml-2">
+                            <label class="radio"> <input id="response" type="radio" name="second" value=27>
+                                <span>27</span>
+                            </label>
+                        </div>
+                        <div class="ans ml-2">
+                            <label class="radio"> <input type="radio" name="third" value=6> <span>6</span>
+                            </label>
+                        </div>
+                        <div class="ans ml-2">
+                            <label class="radio"> <input type="radio" name="fourth" value=1> <span>1</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-row justify-content-between align-items-center p-3 bg-white">
+                        <button class="btn btn-primary d-flex align-items-center btn-danger" type="button">
+                            <i class="fa fa-angle-left mt-1 mr-1"></i>&nbsp;previous
+                        </button>
+                        <button class="btn btn-primary border-success align-items-center btn-success" id="nextButton"
+                            onclick="next()" value="1" type="button">
+                            Next<i class="fa fa-angle-right ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function next() {
+            var value = document.getElementById("nextButton").value;
+            value = parseInt(value) + 1;
+            document.getElementById("nextButton").value = value;
+            document.getElementById("span1").textContent = "(" + value + " of 5)";
+            document.getElementById("span2").textContent = "58";
+
+
+        }
+    </script>
+</body>
+
+</html>
