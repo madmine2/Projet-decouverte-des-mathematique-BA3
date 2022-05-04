@@ -119,7 +119,7 @@ function draw_all_phrases(){
     for(var i =0; i < all_phrases.length;i++){
         writeSomething(all_phrases[i][0],all_phrases[i][1]*width,all_phrases[i][2]*height,all_phrases[i][3]*textSize)
     }
-    writeSomething("Exemple",0.9*width,0.95*height,textSizeRatio*textSize);
+    writeSomething("Exemple",0.7*width,0.95*height,textSizeRatio*textSize);
 }
 function writeSomething(text, x , y, textSize){
     console.log(text)

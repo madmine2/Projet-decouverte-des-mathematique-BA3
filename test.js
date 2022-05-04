@@ -1,0 +1,1 @@
+writeSomething('Titere',0.25547996976568405*width,0.07049808429118774*height,1*textSize); writeSomething('',-0.021919879062736205*width,0.43831417624521074*height,1*textSize); writeSomething('Texte',0.1254724111866969*width,0.2942528735632184*height,1*textSize); writeSomething('sklm',0.10052910052910052*width,0.5302681992337165*height,1*textSize);

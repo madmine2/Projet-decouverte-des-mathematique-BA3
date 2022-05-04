@@ -65,14 +65,7 @@ function writeSomething(text, x , y, textSize){
 }
 
 function main(){
-    writeSomething('Bonjour ',0.38483796296296297*width,0.5210489993098688*height,1*textSize); writeSomething('Ici dskmqfl',0.3081597222222222*width,0.3467908902691511*height,1*textSize); 
-    // var phrases1 = ["Voici un petit problème : ","Si j'ai acheté 3 pommes pour 6 euros, combien coûte "," une seule pomme ?","Pour résoudre ce problème, on cherche le prix d'une seule pomme ",
-    //                 "Tel que lorsqu'on fait 3 fois ce prix, on obtient 6 euros","En mathématiques :  3 * ''prix d'une seule pomme'' = 6 ", "Mais ce n'est pas très pratique de devoir écrire prix d'une seule ","pomme à chaque fois. "]
-    // var phrases1_pos = [0.16,0.2,0.24,0.3,0.34,0.38,0.42,0.46]
-    // for (var i = 0; i < phrases1.length ; i ++){
-    // writeSomething(phrases1[i],0.08*width,phrases1_pos[i]*height,textSize)
-    //}
-    //writeSomething("2 * 3 = 6", 0.05*width,0.1*height)
+    writeSomething('kdsml',0.3836805555555556*width,0.8540731674146606*height,1*textSize); writeSomething('knsmld',0.35185185185185186*width,0.6051951584387324*height,1*textSize); writeSomething('',1.0248842592592593*width,0.939752481980144*height,1*textSize);
 }
 //main
 setup()
