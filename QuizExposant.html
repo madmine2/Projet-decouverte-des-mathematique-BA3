@@ -27,9 +27,9 @@
                     </div>
                     <div class="question bg-white p-3 border-bottom">
                         <div class="d-flex flex-row align-items-center question-title">
-                            <h5 class="text-danger" id="question">Q.1 Un calcul simple</h5>
+                            <h3 class="text-danger" id="questionNum">Q.</h3>
                         </div>
-                        <h5 class="mt-1 ml-2">=> 3^3 = ?</h5>
+                        <h5 class="mt-1 ml-2" id="question">=> 3^3 = ?</h5>
                         <div class="ans ml-2">
                             <label class="radio"> <input type="radio" name="first" value=9>
                                 <span id="radio0">9</span>
@@ -52,7 +52,7 @@
                         </div>
                     </div>
                     <div class="d-flex flex-row justify-content-between align-items-center p-3 bg-white">
-                        <button class="btn btn-primary d-flex align-items-center btn-danger" type="button">
+                        <button class="btn btn-primary d-flex align-items-center btn-danger" type="button" onclick="previous()">
                             <i class="fa fa-angle-left mt-1 mr-1"></i>&nbsp;Précédant
                         </button>
                         <button class="btn btn-primary border-success align-items-center btn-success" id="nextButton"
@@ -72,15 +72,11 @@
         var value = document.getElementById("nextButton").value;
         value++;
         for (var i = 0 ; i < 4; i++){
-           
             document.getElementById("radio"+i).textContent = reponse[value-1][i];
-           
         }
         document.getElementById("span").textContent = "(" + value + " sur 5)";
         document.getElementById("question").textContent = question[value-1];
         document.getElementById("nextButton").value = value;
-  
-       
       }
       function previous(){
         var value = document.getElementById("nextButton").value;
@@ -90,9 +86,7 @@
         }
         document.getElementById("span").textContent = "(" + value + " sur 5)";
         document.getElementById("question").textContent = question[value-1];
-        document.getElementById("nextButton").value = value;
-  
-       
+        document.getElementById("nextButton").value = value; 
       }
     </script>
 </body>
