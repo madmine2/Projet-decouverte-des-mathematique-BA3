@@ -37,7 +37,7 @@
               </div>
               <div class="ans ml-2">
                 <label class="radio">
-                  <input type="radio" name="question" value="3" id="1" />
+                  <input type="radio" name="question" value="3" id="1" autocomplete="off" />
                   <span id="radio0">3</span>
                 </label>
               </div>
@@ -82,14 +82,12 @@
     </div>
 
     <script>
-        var reponse = [["3","-3","1/3","ε"],["5","-5","1/5","autre"],]
-        var question = ["Quelle proposition est l'inverse de 3", "Quelle proposition est l'inverse de 1/5","sdq"]
+        var reponse = [["3","-3","1/3","ε"],["5","-5","1/5","autre"],["Opposé","inverse","complémentaire","autre"]]
+        var question = ["Quelle proposition est l'inverse de 3", "Quelle proposition est l'inverse de 1/5","Si on divise 1 par 5 on obtient le(l') .... de 5"]
       function next() {
-        
         var value = document.getElementById("nextButton").value;
         value = parseInt(value) + 1;
         for (var i = 0 ; i < 4; i++){
-           
             document.getElementById("radio"+i).textContent = reponse[value-1][i];
            
         }
@@ -97,8 +95,9 @@
         document.getElementById("questionSpan").textContent = question[value-1];
         document.getElementById("nextButton").value = value;
   
-       
+         
       }
+
       function previous(){
 
         var value = document.getElementById("nextButton").value;
