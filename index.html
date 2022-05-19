@@ -13,12 +13,12 @@
 
 <body>
 
-    <div>
 
-        <div class="container-fluid " >
+<!-- menu déroulant -->
+        <div class="container-fluid "style=" padding: 0%;"  >
             <!-- ajouter l'ajustement pour compléter la page sur les écrans medium et large et que ce container prenne toute la largeur dans les petits écrans-->
 
-            <nav class="navbar navbar-expand-sm bg-primary navbar-dark ">
+            <nav class="navbar navbar-expand-sm bg-warning navbar-dark " style="padding-left: 2%;">
                 <a class="navbar-brand" href="#"> A la découverte des mathématique </a>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText">
@@ -63,13 +63,14 @@
                 </ul>
             </nav>
         </div>
-    
-       
-<div style="padding-left: 3%;padding-right: 3%; padding-top: 3%;">
-    <p class="h2">Modules d'apprentissage pour la première secondaire</p>
-        <div class="row row-cols-2 row-cols-md-3 g-4">
-            <div class="col" onclick = "window.location = 'quizInverse.html'">
-              <div class="card h-100">
+        <!-- div pour l'image du background -->
+  
+       <!-- cards pour les modules -->
+<div style="padding-left: 3%;padding-right: 3%; padding-top: 3%;background-color: #001220; padding-bottom: 5%;" >
+    <p class="h2" style="color: aliceblue;">Modules d'apprentissage pour la première secondaire</p>
+        <div class="row row-cols-2 row-cols-md-3 g-4" style="margin-top: 5%;">
+            <div class="col"  onclick = "window.location = 'quizInverse.html'">
+              <div class="shadow card h-100" >
                 <img src="Images/comment-trouver-inverse-fraction-nombre.jpg" class="card-img-top" alt="Image illustrative pour les inverses"/>
                 <div class="card-body">
                   <h5 class="card-title">Inverses</h5>
@@ -80,7 +81,7 @@
               </div>
             </div>
             <div class="col"  onclick = "window.location = 'quizExposant.html'">
-              <div class="card h-100">
+              <div class="shadow card h-100">
                 <img src="Images/exposants.jpg" class="card-img-top" alt="Image illustrative pour les exposants"/>
                 <div class="card-body">
                   <h5 class="card-title">Exposants</h5>
@@ -89,16 +90,16 @@
               </div>
             </div>
             <div class="col">
-              <div class="card h-100">
+              <div class="shadow card h-100">
                 <img src="Images/fonction.png" class="card-img-top" alt="Los Angeles Skyscrapers"/>
-                <div class="card-body">
+                <div class=" card-body">
                   <h5 class="card-title">Fonctions</h5>
                   <p class="card-text">Les pourcentages, lien avec les fractions et les rapports</p>
                 </div>
               </div>
             </div>
             <div class="col">
-              <div class="card h-100">
+              <div class="shadow  card h-100">
                 <img src="Images/ordreOperations.jpg" class="card-img-top" alt="Skyscrapers"/>
                 <div class="card-body">
                   <h5 class="card-title">Ordre des opérations</h5>
@@ -110,10 +111,62 @@
             </div>
           </div>
         </div>
+
+      <div style=" --ratioImage: 153/499;
+    
+      width: 100vw; height: calc(var(--ratioImage)*100vw);
+       background-image: url('Images/output-onlinepngtools.png');  background-repeat: no-repeat; 
+       background-size: 100%;
+    
+      
+     "></div>
+<!-- section contact -->
+        <section id="contact" style="background-color: #b74776; padding-bottom: 2%;">
+          <div class="container-fluid">
+    
+            <form >
+              <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Nom</label>
+              <input type="name" class="form-control" id="exampleInputEmail1" aria-describedby="nameHelp" required>
+               
+              </div>
+              <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Email</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" required>
+              
+              </div>
+              <div class="mb-3">
+              <label for="exampleFormControlTextarea1" class="form-label">Commentaire</label>
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+              </div>
+              <div class="form-check">
+              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+              <label class="form-check-label" for="flexRadioDefault1">
+                Problème avec un des modules
+              </label>
+              </div>
+              <div class="form-check">
+              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+              <label class="form-check-label" for="flexRadioDefault2">
+                Requête d'un nouveau module
+              </label>
+              </div>
+              <button type="submit" class="btn btn-info">Envoyer</button>
+            </form>
+          </div>
+
+        </section>
+
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-
+       
 </body>
+ <!-- copyright de bas de page -->
+ <footer>
+  <div class="text-light" style="background-color:black; text-align: center; min-height: 50px;">
+    
+    <div class="container h-100">    </i>&copy Bluw</div>
 
+</footer>
 </html>
