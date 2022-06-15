@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inverse</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+  <link rel="stylesheet" href="./QuizFormat.css">
+</head>
+
+<body>
+    <div class="container-fluid "style=" padding: 0%;"  >
+        <!-- ajouter l'ajustement pour compléter la page sur les écrans medium et large et que ce container prenne toute la largeur dans les petits écrans-->
+
+        <nav class="navbar navbar-expand-sm bg-primary navbar-dark " style="padding-left: 2%;">
+            <a class="navbar-brand" href="#"> Retour au menu :  </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse  " id="navbarText">
+                <ul class="navbar-nav ">
+                    <!-- ajouter les liens vers les sections -->
+
+                    <li class="nav-item ">
+                        <!-- ajouter le dropdown-->
+                        <a class="nav-link" href="index.html">1 ère</a>
+                        <!-- ajouter le dropdown (suite) et veillez à faire les liens pour arriver aux sections relatives via l'ID des sections-->
+                    </li>
+                    <li class="nav-item ">
+                        <!-- ajouter le dropdown-->
+                        <a class="nav-link" href="index2.html">2 ème</a>
+                        <!-- ajouter le dropdown (suite) et veillez à faire les liens pour arriver aux sections relatives via l'ID des sections-->
+                    </li>
+                    <li class="nav-item ">
+                        <!-- ajouter le dropdown-->
+                        <a class="nav-link" href="index2.html">3 ème</a>
+                        <!-- ajouter le dropdown (suite) et veillez à faire les liens pour arriver aux sections relatives via l'ID des sections-->
+                    </li>
+                    <li class="nav-item ">
+                        <!-- ajouter le dropdown-->
+                        <a class="nav-link" href="index2.html">4 ème</a>
+                        <!-- ajouter le dropdown (suite) et veillez à faire les liens pour arriver aux sections relatives via l'ID des sections-->
+                    </li>
+                    <li class="nav-item ">
+                        <!-- ajouter le dropdown-->
+                        <a class="nav-link" href="index2.html">5 ème</a>
+                        <!-- ajouter le dropdown (suite) et veillez à faire les liens pour arriver aux sections relatives via l'ID des sections-->
+                    </li>
+                    <li class="nav-item ">
+                        <!-- ajouter le dropdown-->
+                        <a class="nav-link" href="index2.html">6 ème</a>
+                        <!-- ajouter le dropdown (suite) et veillez à faire les liens pour arriver aux sections relatives via l'ID des sections-->
+                    </li>
+            </div>
+            </ul>
+        </nav>
+    </div>
+
+
+
+  <div class="container mt-1">
+    <div class="d-flex justify-content-center row">
+      <div class="col-md-10 col-lg-10">
+        <div class="border">
+          <div class="question bg-white p-3 border-bottom">
+            <div class="d-flex flex-row justify-content-between align-items-center mcq">
+              <h4>Theorie sur l'inverse d'un chiffre</h4>
+              <span id="span1"></span>
+            </div>
+          </div>
+          <div class="question bg-white p-3 border-bottom">
+          <h5>Souvent, les notions d’inverse et d’opposé en mathématiques prêtent à confusion.
+
+            Deux nombres réels opposés sont 2 nombres qui ont la même partie numérique, mais des signes différents. Leurs distances par rapport à l’origine O d’un axe sont égales, mais opposées. Ainsi, sur un axe horizontal gradué, zéro est au centre du segment [- aa] formé par 2 nombres opposés.
+            
+            formule
+            Soit un nombre positif a > 0, alors son opposé est le nombre négatif - a < 0.
+            
+            La somme de 2 nombres opposés est nulle :
+            
+            a+(−a)=0
+            Soit un nombre a ≠ 0, le nombre inverse de a est
+            
+            1a.
+            En effet, on peut dire que
+            
+            a=a1.
+            Ainsi, l’inverse d’un nombre signifie que l’on inverse le numérateur et le dénominateur.
+            
+            L’inverse de la fraction
+            
+            abest la fraction
+             ba
+            L’inverse de la fraction
+            
+            −abest la fraction
+            −ba
+            [...]</h5>
+          </div>
+          <div class=" text-center p-3 bg-white">
+      
+            <button class="btn btn-primary border-success align-items-center btn-success" id="nextButton" onclick="next()" value=1 type="button"> J'ai compris ! </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    var reponse = [["3", "-3", "1/3", "ε"], ["5", "-5", "1/5", "Autre"], ["Opposé", "Inverse", "Complémentaire", "Autre"], ["4/9", "5/3", "5/6", "4/7"], ["1", "6/8", "6/64", "1/8"]]
+    var question = ["Quelle proposition est l'inverse de 3 ?", "Quelle proposition est l'inverse de 1/5", "1/7 est le (l') ... de 7 ?", "1/3 + 4/3 donne :", "2/8 * 4/8 donne :"]
+    var solution = [2, 0, 0, 1, 3]
+    function next() {
+      var value = document.getElementById("nextButton").value;
+      value = parseInt(value) + 1;
+      if (value == 5) {
+                document.getElementById("nextButton").textContent = "Terminer";
+            }
+      for (var i = 0; i < 4; i++) {
+        document.getElementById("radio" + i).textContent = reponse[value - 1][i];
+        document.getElementById("input" + i).checked = false
+      }
+      document.getElementById("span1").textContent = "(" + value + " sur 5)";
+      document.getElementById("questionSpan").textContent = question[value - 1];
+      document.getElementById("questionNum").textContent = "Q." + value;
+      document.getElementById("nextButton").value = value;
+    }
+    function previous() {
+      var value = document.getElementById("nextButton").value;
+      value = parseInt(value) - 1;
+      if (value < 5) {
+                document.getElementById("nextButton").textContent = "Suivant";
+      }
+      for (var i = 0; i < 4; i++) {
+        document.getElementById("radio" + i).textContent = reponse[value - 1][i];
+        document.getElementById("input" + i).checked = false
+      }
+      document.getElementById("span1").textContent = "(" + value + " sur 5)";
+      document.getElementById("questionSpan").textContent = question[value - 1];
+      document.getElementById("questionNum").textContent = "Q." + value;
+      document.getElementById("nextButton").value = value;
+    }
+  </script>
+</body>
+
+</html>
