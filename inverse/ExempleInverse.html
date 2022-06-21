@@ -48,7 +48,7 @@
         <canvas id="canvas2" style="height : 1.5rem;" ></canvas>
       <h6> Pour trouver le prix d'un morceau de chocolat, il suffit de prendre un morceau de chocolat et un morceau de la pièce de 1 euro de la même taille que le morceau de chocolat</h6>
       <canvas id="canvas3" style="height : 3rem;" ></canvas>
-      <h6>La pièce de 1 euro contient 10 morceaux de cette taille, on a donc prit un morceau parmis 10. Cela peut s'écrire 1/10 ou 1 <sup>-1</sup>. C'est une fraction qui correspond à l'inverse de 10. La valeur de ce morceau est donc 1/10 = 0.1 euro (ou 10 centimes).
+      <h6>La pièce de 1 euro contient 10 morceaux de cette taille, on a donc pris un morceau parmis 10. Cela peut s'écrire 1/10 ou 10<sup>-1</sup>. C'est une fraction qui correspond à l'inverse de 10. La valeur de ce morceau est donc 1/10 = 0.1 euro (ou 10 centimes).
          <br> En conclusion, si on a 10 éléments qui valent 1 euros, le prix d'un élément parmis les 10 s'écrit 1/10 et correspond à l'inverse de 10. 
          <br> De manière générale, si on a x éléments qui forment un tout de valeur unitaire alors la valeur d'un seule éléments est notée a et on a x * a = 1. Pour trouver a, on doit calculer l'inverse de x, noté x <sup>-1</sup> = 1/x.
       </h6>
@@ -56,7 +56,7 @@
           </div>
           <div class=" text-center p-3 bg-white">
       
-            <button class="btn btn-primary border-success align-items-center btn-success" id="nextButton" onclick="window.location = 'QuizInverse.html'" value=1 type="button"> J'ai compris ! </button>
+            <button class="btn btn-primary border-success align-items-center btn-success" id="nextButton" onclick="window.location = 'QuizInverse.html'" value=1 type="button"> Passer au quiz ! </button>
           </div>
         </div>
       </div>
@@ -83,12 +83,11 @@ var HEIGHT = canv.height;
     ctx.strokeStyle = "black" ;
    ctx.fillRect(0,0, WIDTH, HEIGHT);
     ctx.strokeRect(0,0, WIDTH, HEIGHT);
-    for (var i = 0; i  < 10; i++){
+    for (var i = 0; i  < 10; i++) {
       ctx.beginPath();
     ctx.moveTo(WIDTH * i/10, 0);
     ctx.lineTo(WIDTH * i/10, HEIGHT);
     ctx.stroke();
-
     }
 }
 function drawRect2(){
@@ -104,7 +103,6 @@ var HEIGHT = canv.height;
     ctx.strokeStyle = "black" ;
    ctx.fillRect(0,0, WIDTH, HEIGHT);
     ctx.strokeRect(0,0, WIDTH, HEIGHT);
-    
 }
 function drawRect3(){
   var canv = document.getElementById("canvas3");
@@ -123,11 +121,7 @@ var HEIGHT = canv.height;
     ctx.strokeStyle = "black" ;
    ctx.fillRect(0,HEIGHT/1.9, WIDTH/10, HEIGHT);
     ctx.strokeRect(0,HEIGHT/1.9, WIDTH/10, HEIGHT);
-    
 }
-
-
-
   </script>
 </body>
 
