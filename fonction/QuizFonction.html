@@ -12,7 +12,19 @@
     <link rel="stylesheet" href="./QuizFormat.css">
 </head>
 
-<body>
+<body style="background-color:#001220; font-family: 'Charis SIL';">
+    <div class="container-fluid  "style=" padding: 0%;"  >
+
+        <nav class="navbar  bg-primary navbar-dark " style="padding-left: 2%;">
+            <a class="navbar-brand" href="#"> Retour à l'accueil :  </a>
+
+            <button class="navbar-toggler" type="button"   onclick = "window.location = '../index.html'">
+                <span class="fa fa-home "></span>
+            </button>
+
+        </nav>
+    </div>
+
     <div class="container mt-5">
         <div class="d-flex justify-content-center row">
             <div class="col-md-10 col-lg-10">
@@ -23,11 +35,11 @@
                             <span id="span">(1 sur 5)</span>
                         </div>
                     </div>
-                    <div class="question bg-white p-3 border-bottom">
+                    <div class="question bg-white p-3 border-bottom" id="container">
                         <div class="d-flex flex-row align-items-center question-title">
                             <h3 class="text-danger" id="questionNum">Q.1</h3>
                             <h5 class="mt-1 ml-2" id="question">Donnez tous les points appartenant au graphe !</h5>
-                            <img id="img" src=Images/fct1.png style=" --ratioImage: 115/200; width: calc(var(--ratioImage)*100vw); overflow: scroll;">
+                            <img id="img" src=../Images/fct1.png style=" --ratioImage: 115/200; width: calc(var(--ratioImage)*100vw); overflow: scroll;">
                         </div>
                         <div class="ans ml-2">
                             <label class="radio">
@@ -55,7 +67,7 @@
                         </div>
                     </div>
                     <div class="d-flex flex-row justify-content-between align-items-center p-3 bg-white">
-                        <button class="btn btn-primary d-flex align-items-center btn-danger" type="button" onclick="previous()"> Précédant </button>
+                        <button class="btn btn-primary d-flex align-items-center btn-danger" type="button" id="previousButton" onclick="previous()"> Précédant </button>
                         <button class="btn btn-primary border-success align-items-center btn-success" id="nextButton" onclick="next()" value=1 type="button"> Suivant </button>
                     </div>
                 </div>
@@ -71,8 +83,49 @@
                         ["une variable et un scalaire", "le minimum et le maximum", "la pente et l'ordonnée à l'origine", "l'abscisse et l'ordonnée d'un point"]]
         var question = ["Donnez tous les points appartenant au graphe !", "Quelle est l'image de 2 par ƒ(x) ?", "Les fonctions cos(x) et 1/x sont respectivement :", "Que vaut la pente de cette droite ?", "Dans cette équation de droite, m et p représentent respectivement :"]
         var solution = [3, 1, 2, 3, 2]
-        function next() {
+        var rep = [];
+
+        function fin() {
+        var score = 0;
+            for(var i = 0; i < 5; i++){
+                if(solution[i] == rep[i]){
+                score++;
+                }
+            }
+            document.getElementById("container").textContent = "";
+            document.getElementById("nextButton").textContent = "Accueil";
+            document.getElementById("previousButton").textContent = "Théorie";
+            document.getElementById("previousButton").onclick = function(){ window.location = 'TheorieExposant.html'}
+            document.getElementById("nextButton").onclick =function(){  window.location = '../index.html'}
+            var h6 = document.createElement("h6");
+            document.getElementById("container").appendChild(h6);
+
+            if (score <4){
+            h6.innerText = "Vous avez réalisé un score de " + score + " sur 5, il vous reste des lacunes sur cette notion. Nous vous invitons à la relire, maintenant en appuyant sur le bouton théorie ou une autre fois depuis l'accueil.";
+            }
+            else{
+            h6.innerText = "Vous avez réalisé un score de " + score + " sur 5, vous maitrisez assez bien cette notion. Vous pouvez maintenant passer à une autre notion en retournant à l'accueil. Si vous désirez relire la théorie, vous pouvez le faire maintenant en appuyant sur le bouton théorie ou une autre fois depuis l'accueil.  "
+            }
+        }
+
+        function next() {    
+            //check la question à laquelle on est
             var value = document.getElementById("nextButton").value;
+            
+            // prend en compte les réponses
+            for(var i = 0; i < 4; i++){
+                if ( document.getElementById("input" + i).checked == true) {
+                    rep[value-1] = i;
+                }
+            }
+
+            // action lorsqu'on est à la fin
+            if (value == 5) {
+                fin();
+                return;
+            }
+
+            // modification lorsqu'on change de question
             value++
             if (value == 5) {
                 document.getElementById("nextButton").textContent = "Terminer";
@@ -84,7 +137,7 @@
             document.getElementById("span").textContent = "(" + value + " sur 5)";
             document.getElementById("question").textContent = question[value - 1];
             document.getElementById("questionNum").textContent = "Q." + value;
-            document.getElementById("img").src = "Images/fct" + value + ".png";
+            document.getElementById("img").src = "../Images/fct" + value + ".png";
             document.getElementById("nextButton").value = value;
         }
         function previous() {
@@ -100,7 +153,7 @@
             document.getElementById("span").textContent = "(" + value + " sur 5)";
             document.getElementById("question").textContent = question[value - 1];
             document.getElementById("questionNum").textContent = "Q." + value;
-            document.getElementById("img").src = "Images/fct" + value + ".png";
+            document.getElementById("img").src = "../Images/fct" + value + ".png";
             document.getElementById("nextButton").value = value;
         }
     </script>
