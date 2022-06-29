@@ -68,7 +68,7 @@ self.addEventListener('install', function (event) {
              return caches.open(CACHE_STATIC_NAME)		// On ouvre le cache statique
                           .then(function(cache) {
                           if (event.request.headers.get('accept').includes('text/html')) {  // On vérifie qu’il s’agit d’une page html
-                             return cache.match('/offline.html');		// On retourne la page d’erreur
+                             return cache.match('offline.html');		// On retourne la page d’erreur
                           }
                        });
                  });           
