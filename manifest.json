@@ -1,0 +1,35 @@
+{
+    "theme_color": "#f69435",
+    "background_color": "#2f3d64",
+    "display": "minimal-ui",
+    "start_url": "/index.html",
+    "orientation": "portrait",
+    "name": "D\u00e9couverte des Math\u00e9matiques",
+    "short_name": "D\u00e9couverteMath",
+    "description": "Apprendre les math\u00e9matiques \u00e0 travers des exemples concrets",
+    "icons": [{
+        "src": "Icones/ico512.png",
+        "type": "image/png",
+        "sizes": "512x512"
+    }, {
+        "src": "Icones/ico256.png",
+        "type": "image/png",
+        "sizes": "256x256"
+    }, {
+        "src": "Icones/ico192.png",
+        "type": "image/png",
+        "sizes": "192x192"
+    }, {
+        "src": "Icones/ico152.png",
+        "type": "image/png",
+        "sizes": "152x152"
+    }, {
+        "src": "Icones/ico144.png",
+        "type": "image/png",
+        "sizes": "144x144"
+    }, {
+        "src": "Icones/ico128.png",
+        "type": "image/png",
+        "sizes": "128x128"
+    }]
+} 
