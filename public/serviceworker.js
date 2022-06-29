@@ -17,7 +17,8 @@ var STATIC_FILES = [
   "https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css",
   "https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js",
   "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css",
-  "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"
+  "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js",
+  "https://cdn.jsdelivr.net/npm/chart.js"
 
 ];
 self.addEventListener('install', function (event) {
