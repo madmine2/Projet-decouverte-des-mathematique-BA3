@@ -125,7 +125,7 @@
 
       <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Nom</label>
-        <input#exampleInputNom1.form-control type="name" aria-describedby="nameHelp" required>
+        <input type="name" class="form-control" id="exampleInputNom1" aria-describedby="nameHelp" required>
       </div>
 
       <div class="mb-3">
@@ -183,8 +183,7 @@
       var name = document.getElementById('exampleInputNom1').value;
       var message = document.getElementById('exampleFormControlTextarea1').value
       var adresse = document.getElementById('exampleInputEmail1').value
-      console.log(message)
-      console.log(document.getElementById('exampleInputEmail1'))
+   
       var data = {
         service_id: 'service_45iz1rc',
         template_id: 'template_xhbbytp',
