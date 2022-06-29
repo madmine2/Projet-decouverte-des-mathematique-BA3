@@ -1,5 +1,5 @@
 {
-    "name": "Decouverte des mathématiques",
+    "name": "Découverte des mathématiques",
     "version": "1.0.0",
     "description": "Site web pour faire découvrir les mathématiques à des élèves",
     "main": "public/index.js",
