@@ -2,7 +2,7 @@
     "theme_color": "#f69435",
     "background_color": "#2f3d64",
     "display": "minimal-ui",
-    "start_url": "index.html",
+    "start_url": "/index.html",
     "orientation": "portrait",
     "name": "D\u00e9couverte des Math\u00e9matiques",
     "short_name": "D\u00e9couverteMath",

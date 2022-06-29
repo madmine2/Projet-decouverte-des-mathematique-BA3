@@ -1,0 +1,23 @@
+{
+    "name": "Decouverte des mathématiques",
+    "version": "1.0.0",
+    "description": "Site web pour faire découvrir les mathématiques à des élèves",
+    "main": "index.js",
+    "scripts": {
+      "start": "http-server -c-1"
+    },
+    "keywords": [
+      "pwa",
+      "progressive",
+      "web",
+      "app",
+      "math"
+     
+    ],
+    "author": "Delaigle Matteo and Wauquier Hugo",
+    "license": "ISC",
+    "devDependencies": {
+      "http-server": "^0.9.0"
+    }
+  }
+  
