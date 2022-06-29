@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Opérations</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+  <link rel="stylesheet" href="./QuizFormat.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="manifest" href="manifest.json">
+
+</head>
+
+<body style="background-color:#001220; font-family: 'Charis SIL';">
+    <div class="container-fluid  "style=" padding: 0%;"  >
+
+        <nav class="navbar  bg-primary navbar-dark " style="padding-left: 2%;">
+            <a class="navbar-brand" href="#"> Retour à l'accueil :  </a>
+
+            <button class="navbar-toggler" type="button"   onclick = "window.location = '../index.html'">
+                <span class="fa fa-home "></span>
+            </button>
+
+        </nav>
+    </div>
+    
+  <div class="container mt-3 ">
+    <div class="d-flex justify-content-center row">
+      <div class="col-md-10 col-lg-10">
+        <div class="border rounded">
+          <div class="question bg-white p-3 border-bottom" >
+            <div class="d-flex flex-row justify-content-between align-items-center text-center mcq" id="question">
+              <h4>Exemple concret de l'importance des opérations</h4>
+              <span id="span1"></span>
+            </div>
+          </div>
+          <div class="question bg-white  p-3 border-bottom">
+            <h6> Prenons l'exemple de plusieurs articles passés à la caisse (2 laits, 2 farines). <br> Chacun à un prix différent et on souhaite
+              savoir le total.<br><br>Nous ferons donc : (lait + farine) * 2. Si les opérations ne jouaient pas un rôle, lait + farine * 2
+              serait incorrect car nous devons prendre en compte en premier lieu la somme des produits en commun (ici la parenthèse)
+            </h6>
+          </div>
+          <div class=" text-center p-3 bg-white">
+      
+            <button class="btn btn-primary border-success align-items-center btn-success" id="nextButton" onclick="window.location = 'QuizOperation.html'" value=1 type="button"> Passer au quiz ! </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Exposants</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+  <link rel="stylesheet" href="./QuizFormat.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="manifest" href="manifest.json">
+
+</head>
+
+<body style="background-color:#001220; font-family: 'Charis SIL';">
+    <div class="container-fluid  "style=" padding: 0%;"  >
+
+        <nav class="navbar  bg-primary navbar-dark " style="padding-left: 2%;">
+            <a class="navbar-brand" href="#"> Retour à l'accueil :  </a>
+
+            <button class="navbar-toggler" type="button"   onclick = "window.location = '../index.html'">
+                <span class="fa fa-home "></span>
+            </button>
+
+        </nav>
+    </div>
+
+  <div class="container mt-3 ">
+    <div class="d-flex justify-content-center row">
+      <div class="col-md-10 col-lg-10">
+        <div class="border rounded">
+          <div class="question bg-white p-3 border-bottom">
+            <div class="d-flex flex-row justify-content-between align-items-center mcq">
+              <h4>Théorie sur les fonctions</h4>
+              <span id="span1"></span>
+            </div>
+          </div>
+          <div class="question bg-white p-3 border-bottom">
+          <h5> Une fonction permet de montrer l'évolution d'une valeur (d'un calcul apellé équation) par rapport à une variable (implémentée
+            dans l'équation).<br>
+            Par exemple, l'équation : y = m*x + p montre une droite de pente m et dont l'ordonnée à l'origine est p.
+            <br> Il existe différents types de fonctions :<br>
+            <ul>
+              <li>y = ax + b : droite (fonction du 1er degré)</li>
+              <li>y = ax² + bx + c : parabole (fonction du 2e degré)</li>
+              <li>y = ax³ + bx² + cx + d : hyperbole (fonction du 3e degré)</li>
+              <br> Et bien plus, d'un degré supérieur comme d'un genre différent (ex: exponentielle, logarithmique, ... que nous n'allons pas voir ici)
+            </ul>
+          </h5>
+          </div>
+          <div class=" text-center p-3 bg-white">
+      
+            <button class="btn btn-primary border-success align-items-center btn-success" id="nextButton" onclick="window.location = 'ExempleFonction.html'" value=1 type="button"> J'ai compris ! </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+</body>
+
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inverse</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+  <link rel="stylesheet" href="./QuizFormat.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="manifest" href="manifest.json">
+
+</head>
+
+<body style="background-color:#001220; font-family: 'Charis SIL';">
+    <div class="container-fluid  "style=" padding: 0%;"  >
+
+        <nav class="navbar  bg-primary navbar-dark " style="padding-left: 2%;">
+            <a class="navbar-brand" href="#"> Retour à l'accueil :  </a>
+
+            <button class="navbar-toggler" type="button"   onclick = "window.location = '../index.html'">
+                <span class="fa fa-home "></span>
+            </button>
+
+        </nav>
+    </div>
+
+  <div class="container mt-3 ">
+    <div class="d-flex justify-content-center row">
+      <div class="col-md-10 col-lg-10">
+        <div class="border rounded">
+          <div class="question bg-white p-3 border-bottom" >
+            <div class="d-flex flex-row justify-content-between align-items-center text-center mcq" id="question">
+              <h4>Exemple concret de la notion d'inverse</h4>
+              <span id="span1"></span>
+            </div>
+          </div>
+          <div class="question bg-white  p-3 border-bottom">
+       <h6>Je sais que je peux acheter 10 morceaux de chocolats en payant 1 euros et j'aimerais savoir quel est le prix d'un seul morceau. 
+        <br> <br> 10 morceaux de chocolats</h6>
+
+      <canvas id="canvas1" style="height : 1.5rem;" ></canvas>
+        <h6> = <br>  1 euro </h6>
+        <canvas id="canvas2" style="height : 1.5rem;" ></canvas>
+      <h6> Pour trouver le prix d'un morceau de chocolat, il suffit de prendre un morceau de chocolat et un morceau de la pièce de 1 euro de la même taille que le morceau de chocolat</h6>
+      <canvas id="canvas3" style="height : 3rem;" ></canvas>
+      <h6>La pièce de 1 euro contient 10 morceaux de cette taille, on a donc pris un morceau parmis 10. Cela peut s'écrire 1/10 ou 10<sup>-1</sup>. C'est une fraction qui correspond à l'inverse de 10. La valeur de ce morceau est donc 1/10 = 0.1 euro (ou 10 centimes).
+         <br> En conclusion, si on a 10 éléments qui valent 1 euros, le prix d'un élément parmis les 10 s'écrit 1/10 et correspond à l'inverse de 10. 
+         <br> De manière générale, si on a x éléments qui forment un tout de valeur unitaire alors la valeur d'un seule éléments est notée a et on a x * a = 1. Pour trouver a, on doit calculer l'inverse de x, noté x <sup>-1</sup> = 1/x.
+      </h6>
+
+          </div>
+          <div class=" text-center p-3 bg-white">
+      
+            <button class="btn btn-primary border-success align-items-center btn-success" id="nextButton" onclick="window.location = 'QuizInverse.html'" value=1 type="button"> Passer au quiz ! </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+
+
+drawRect1();
+drawRect2();
+drawRect3();
+//dessine le canvas
+function drawRect1(){
+  var canv = document.getElementById("canvas1");
+console.log(document.getElementById("question").clientWidth);
+canv.style.width = document.getElementById("question").clientWidth+"px";
+//set up the context
+ctx = canv.getContext("2d");
+canvRect = canv.getBoundingClientRect();   
+var WIDTH = canv.width;
+var HEIGHT = canv.height;
+    ctx.fillStyle = "brown";
+    ctx.strokeStyle = "black" ;
+   ctx.fillRect(0,0, WIDTH, HEIGHT);
+    ctx.strokeRect(0,0, WIDTH, HEIGHT);
+    for (var i = 0; i  < 10; i++) {
+      ctx.beginPath();
+    ctx.moveTo(WIDTH * i/10, 0);
+    ctx.lineTo(WIDTH * i/10, HEIGHT);
+    ctx.stroke();
+    }
+}
+function drawRect2(){
+  var canv = document.getElementById("canvas2");
+console.log(document.getElementById("question").clientWidth);
+canv.style.width = document.getElementById("question").clientWidth+"px";
+//set up the context
+ctx = canv.getContext("2d");
+canvRect = canv.getBoundingClientRect();   
+var WIDTH = canv.width;
+var HEIGHT = canv.height;
+    ctx.fillStyle = "yellow";
+    ctx.strokeStyle = "black" ;
+   ctx.fillRect(0,0, WIDTH, HEIGHT);
+    ctx.strokeRect(0,0, WIDTH, HEIGHT);
+}
+function drawRect3(){
+  var canv = document.getElementById("canvas3");
+console.log(document.getElementById("question").clientWidth);
+canv.style.width = document.getElementById("question").clientWidth+"px";
+//set up the context
+ctx = canv.getContext("2d");
+canvRect = canv.getBoundingClientRect();   
+var WIDTH = canv.width;
+var HEIGHT = canv.height;
+    ctx.fillStyle = "brown";
+    ctx.strokeStyle = "black" ;
+   ctx.fillRect(0,0, WIDTH/10, HEIGHT/2.1);
+    ctx.strokeRect(0,0, WIDTH/10, HEIGHT/2.1);
+    ctx.fillStyle = "yellow";
+    ctx.strokeStyle = "black" ;
+   ctx.fillRect(0,HEIGHT/1.9, WIDTH/10, HEIGHT);
+    ctx.strokeRect(0,HEIGHT/1.9, WIDTH/10, HEIGHT);
+}
+  </script>
+</body>
+
+</html>
